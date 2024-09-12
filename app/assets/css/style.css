@@ -1,0 +1,32 @@
+:root {
+    --color-primary: #1abc9c;
+    --color-secondary: #76d7c4;
+    --color-white: white;
+    --color-success: green;
+    --color-danger: red;
+    --color-info: blue;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+html {
+    font-size: 16px;
+}
+
+body {
+    background: var(--color-primary);
+}
+
+.box-form {
+    width: 30rem;
+    background: var(--color-white);
+    margin: 4rem auto 0 auto;
+    border-radius: 0.5rem;
+    padding: 1rem;
+    box-shadow: 0rem 0rem 0.5rem black;
+}
