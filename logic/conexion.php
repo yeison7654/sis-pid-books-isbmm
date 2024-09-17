@@ -5,7 +5,7 @@
 $server = "localhost";
 $user = "root";
 $password = "";
-$bd = "db_storeBooks123";
+$bd = "db_storeBooks";
 $charset = "utf8";
 $host = "mysql:host=$server;dbname=$bd;charset=$charset";
 try {
@@ -22,6 +22,7 @@ try {
         "title" => "Ocurrio un error inesperado",
         "text" => "Ah sucedido un error : " . $errors->getMessage() . "!",
         "date" => date("Y-m-d H:i:s"),
+        "type" => "danger"
     );
     echo json_encode($result);
     die();

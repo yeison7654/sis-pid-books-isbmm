@@ -25,7 +25,19 @@ function formInsert() {
             fetch(url, config).
                 then(response => response.json()).
                 then(data => {
-                    console.log(data)
+                    if (data.status) {
+                        let alertMsj = document.querySelector(".alert");
+                        alertMsj.classList.toggle("hidden")
+                        alertMsj.classList.toggle(data.type)
+                        document.querySelector(".alert-title").innerHTML = data.title
+                        document.querySelector(".alert-text").innerHTML = data.text
+                    } else {
+                        let alertMsj = document.querySelector(".alert");
+                        alertMsj.classList.toggle("hidden")
+                        alertMsj.classList.toggle(data.type)
+                        document.querySelector(".alert-title").innerHTML = data.title
+                        document.querySelector(".alert-text").innerHTML = data.text
+                    }
                 })
         } catch (error) {
             console.log(error)
