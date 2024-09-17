@@ -5,7 +5,7 @@
 $server = "localhost";
 $user = "root";
 $password = "";
-$bd = "db_storeBooks";
+$bd = "db_storeBooks123";
 $charset = "utf8";
 $host = "mysql:host=$server;dbname=$bd;charset=$charset";
 try {
@@ -15,7 +15,14 @@ try {
     $conexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     //Forzamos el uso de consultas con UTF8
     $conexion->exec("SET NAMES 'utf8'");
-    echo "Conexion correcta";
+    $status = true;
 } catch (PDOException $errors) {
-    echo "Ah sucedido un error : " . $errors->getMessage() . "!";
+    $result = array(
+        "status" => false,
+        "title" => "Ocurrio un error inesperado",
+        "text" => "Ah sucedido un error : " . $errors->getMessage() . "!",
+        "date" => date("Y-m-d H:i:s"),
+    );
+    echo json_encode($result);
+    die();
 }

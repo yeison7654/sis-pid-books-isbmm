@@ -20,7 +20,7 @@ function formInsert() {
             cache: "no-cache",
             body: data
         };
-        let url = "../logic/autors.php";
+        let url = url_logic + "autors/create.php";
         try {
             fetch(url, config).
                 then(response => response.json()).
