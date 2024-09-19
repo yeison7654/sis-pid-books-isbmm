@@ -26,17 +26,9 @@ function formInsert() {
                 then(response => response.json()).
                 then(data => {
                     if (data.status) {
-                        let alertMsj = document.querySelector(".alert");
-                        alertMsj.classList.toggle("hidden")
-                        alertMsj.classList.toggle(data.type)
-                        document.querySelector(".alert-title").innerHTML = data.title
-                        document.querySelector(".alert-text").innerHTML = data.text
+                        alertas(data)
                     } else {
-                        let alertMsj = document.querySelector(".alert");
-                        alertMsj.classList.toggle("hidden")
-                        alertMsj.classList.toggle(data.type)
-                        document.querySelector(".alert-title").innerHTML = data.title
-                        document.querySelector(".alert-text").innerHTML = data.text
+                        alertas(data)
                     }
                 })
         } catch (error) {
