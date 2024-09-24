@@ -145,3 +145,36 @@ td {
 .style-table tbody tr:last-of-type {
     border-bottom: 0.2rem solid var(--color-primary);
 }
+
+.btn-update {
+    padding: 0;
+    margin: 0;
+    border: 0;
+    outline: 0;
+    background: var(--color-info);
+    padding: 0.2rem;
+    border-radius: 0.2rem;
+    color: var(--color-white);
+    cursor: pointer;
+    margin: 0.1rem;
+    transition: all 0.250ms ease-in-out;
+}
+
+.btn-update:hover,
+.btn-delete:hover {
+    box-shadow: 0 0 0.2rem black;
+}
+
+.btn-delete {
+    padding: 0;
+    margin: 0;
+    border: 0;
+    outline: 0;
+    background-color: var(--color-danger);
+    padding: 0.2rem;
+    color: var(--color-white);
+    border-radius: 0.2rem;
+    cursor: pointer;
+    margin: 0.1rem;
+    transition: all 0.250ms ease-in-out;
+}

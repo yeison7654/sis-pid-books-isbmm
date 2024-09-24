@@ -1,4 +1,5 @@
 <?php
+require_once("../conexion.php");
 /*
 *select a autors
 */
@@ -8,8 +9,16 @@ if ($conexion) {
         $prepared = $conexion->prepare($sql);
         $prepared->execute();
         $result = $prepared->fetchAll(PDO::FETCH_ASSOC);
-        print_r($result);
+        echo json_encode(["data" => $result, "status" => true]);
     } catch (PDOException $errors) {
-        echo "Ah sucedido un error : " . $errors->getMessage() . "!";
+        $result = array(
+            "status" => false,
+            "title" => "Ocurrio un error inesperado",
+            "text" => "Ah sucedido un error : " . $errors->getMessage() . "!",
+            "date" => date("Y-m-d H:i:s"),
+            "type" => "danger"
+        );
+        echo json_encode($result);
+        die();
     }
 }

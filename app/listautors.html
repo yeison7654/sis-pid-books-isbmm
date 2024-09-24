@@ -11,7 +11,11 @@
 <body>
     <div class="box-table">
         <h1 style="font-size: 1.5rem; color: var(--color-primary);margin-bottom: 1rem;">Lista Autores</h1>
-        <table class="style-table">
+        <div class="alert hidden">
+            <p class="alert-title">Este es el titulo de la alerta</p>
+            <p class="alert-text">Este es el texto de la alerta</p>
+        </div>
+        <table id="table" class="style-table">
             <thead>
                 <tr>
                     <th>#</th>
@@ -21,20 +25,12 @@
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td>
-                        01
-                    </td>
-                    <td>Yeison Danner</td>
-                    <td>Peruano</td>
-                    <td>
-                        <button>Actualizar</button>
-                        <button>Eliminar</button>
-                    </td>
-                </tr>
+
             </tbody>
         </table>
     </div>
+    <script src="./assets/js/main.js"></script>
+    <script src="./assets/js/js_listautors.js"></script>
 </body>
 
 </html>
