@@ -31,7 +31,7 @@ function loadTable() {
                                          <td>${element.a_name}</td>
                                          <td>${element.a_nacionalidad}</td>                                    
                                          <td>
-                                            <button class="btn-update">Actualizar</button>
+                                            <button data-id="${element.autorId}" data-name="${element.a_name}" data-nacionalidad="${element.a_nacionalidad}" class="btn-update">Actualizar</button>
                                             <button data-id="${element.autorId}" data-name="${element.a_name}" class="btn-delete">Eliminar</button>
                                          </td>`
                         tablebody.appendChild(row);
