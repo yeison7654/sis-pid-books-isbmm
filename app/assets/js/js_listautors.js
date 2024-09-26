@@ -1,8 +1,11 @@
 document.addEventListener("DOMContentLoaded", () => {
     loadTable();
     setTimeout(() => {
-        deleteAutor()
+        deleteAutor();
     }, 1000);
+})
+document.addEventListener("click", () => {
+    deleteAutor();
 })
 
 function loadTable() {
@@ -14,7 +17,7 @@ function loadTable() {
             text: "La informacion de la tabla esta cargando",
             date: "",
             type: "info",
-        }, 2)
+        })
         fetch(url)
             .then(response => response.json())
             .then(result => {

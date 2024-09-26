@@ -20,6 +20,8 @@ html {
 
 body {
     background: var(--color-primary);
+    display: flex;
+    flex-direction: row;
 }
 
 .box-form {
@@ -32,7 +34,7 @@ body {
 }
 
 .box-table {
-    width: 80%;
+    width: 70%;
     background: var(--color-white);
     margin: 4rem auto 0 auto;
     border-radius: 0.5rem;
@@ -177,4 +179,40 @@ td {
     cursor: pointer;
     margin: 0.1rem;
     transition: all 0.250ms ease-in-out;
+}
+
+.menu-bar {
+    background: var(--color-white);
+    margin: 1rem 1rem;
+    width: 20%;
+    border-radius: 1rem;
+    padding: 0.5rem;
+    box-shadow: 0rem 0rem 0.5rem;
+}
+
+.menu-bar>ul {
+    list-style: none;
+    width: 100%;
+}
+
+.menu-bar>ul li {
+    width: 100%;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    cursor: pointer;
+}
+
+.menu-bar>ul li:hover {
+    background-color: var(--color-primary);
+    border-radius: 1rem;
+}
+
+.menu-bar>ul li>a {
+    text-decoration: none;
+    width: 100%;
+    padding: 0 1rem;
+}
+
+.menu-bar>ul li>a:hover {
+    color: var(--color-white);
 }
