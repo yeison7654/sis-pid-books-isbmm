@@ -64,7 +64,12 @@ function deleteAutor() {
                 fetch(url, config)
                     .then(response => response.json())
                     .then(result => {
-                        console.log(result)
+                        if (result.status) {
+                            alertas(result);
+                            loadTable();
+                        } else {
+                            alertas(result, 3);
+                        }
                     })
             } catch (error) {
                 console.log(error)
