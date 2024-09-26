@@ -63,20 +63,37 @@ function deleteAutor() {
                 body: data,
             }
             let url = url_logic + "autors/delete.php";
-            try {
-                fetch(url, config)
-                    .then(response => response.json())
-                    .then(result => {
-                        if (result.status) {
-                            alertas(result);
-                            loadTable();
-                        } else {
-                            alertas(result, 3);
-                        }
-                    })
-            } catch (error) {
-                console.log(error)
-            }
+            Swal.fire({
+                title: "¿Estas seguro?",
+                text: "Estas seguro de eliminar el registro " + name,
+                icon: "warning",
+                showCancelButton: true,
+                confirmButtonColor: "#3085d6",
+                cancelButtonColor: "#d33",
+                confirmButtonText: "Si, eliminalo"
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    try {
+                        fetch(url, config)
+                            .then(response => response.json())
+                            .then(result => {
+                                if (result.status) {
+                                    Swal.fire({
+                                        title: "Eliminado",
+                                        text: "Se elimino correctamente el registro",
+                                        icon: "success"
+                                    });
+                                    loadTable();
+                                } else {
+                                    alertas(result, 3);
+                                }
+                            })
+                    } catch (error) {
+                        console.log(error)
+                    }
+                }
+            });
+
         })
     })
 }
