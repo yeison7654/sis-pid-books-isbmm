@@ -3,6 +3,7 @@ document.addEventListener("DOMContentLoaded", () => {
     setTimeout(() => {
         deleteAutor();
         updateAutor();
+        formUpdate();
     }, 1000);
 })
 document.addEventListener("click", () => {
@@ -114,4 +115,38 @@ function updateAutor() {
             sltNacionalidad[0].innerHTML = element.getAttribute("data-nacionalidad")
         })
     });
+}
+
+/*
+funcion para actualizar en el servidor php
+ */
+function formUpdate() {
+    let formUpdate = document.querySelector("#formUpdate");
+    formUpdate.addEventListener("submit", (e) => {
+        e.preventDefault();
+        let data = new FormData(formUpdate);
+        let encabezados = new Headers();
+        let config = {
+            method: "POST",
+            headers: encabezados,
+            node: "cors",
+            cache: "no-cache",
+            body: data
+        };
+        let url = url_logic + "autors/update.php";
+        try {
+            fetch(url, config).
+                then(response => response.json()).
+                then(data => {
+                    if (data.status) {
+                        alertas(data)
+                        loadTable();
+                    } else {
+                        alertas(data)
+                    }
+                })
+        } catch (error) {
+            console.log(error)
+        }
+    })
 }
