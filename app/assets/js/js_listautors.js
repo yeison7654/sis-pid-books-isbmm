@@ -2,10 +2,12 @@ document.addEventListener("DOMContentLoaded", () => {
     loadTable();
     setTimeout(() => {
         deleteAutor();
+        updateAutor();
     }, 1000);
 })
 document.addEventListener("click", () => {
     deleteAutor();
+    updateAutor();
 })
 
 function loadTable() {
@@ -96,4 +98,15 @@ function deleteAutor() {
 
         })
     })
+}
+function updateAutor() {
+    let btnUpdate = document.querySelectorAll(".btn-update");
+    btnUpdate.forEach(element => {
+        element.addEventListener("click", () => {
+            let formUpdate = document.querySelector(".form-update");
+            formUpdate.classList.toggle("hidden")
+            document.querySelector("#idAutor") = element.getAttribute("data-id");
+            document.querySelector("#txtName") = element.getAttribute("data-name");
+        })
+    });
 }
