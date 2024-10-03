@@ -105,8 +105,13 @@ function updateAutor() {
         element.addEventListener("click", () => {
             let formUpdate = document.querySelector(".form-update");
             formUpdate.classList.toggle("hidden")
-            document.querySelector("#idAutor") = element.getAttribute("data-id");
-            document.querySelector("#txtName") = element.getAttribute("data-name");
+            document.querySelector("#idAutor").value = element.getAttribute("data-id");
+            document.querySelector("#txtName").value = element.getAttribute("data-name");
+            let sltNacionalidad = document.querySelector("#sltNacionalidad");
+            sltNacionalidad[0].value = element.getAttribute("data-nacionalidad")
+            sltNacionalidad[0].selected = true
+            sltNacionalidad[0].disabled = false
+            sltNacionalidad[0].innerHTML = element.getAttribute("data-nacionalidad")
         })
     });
 }
